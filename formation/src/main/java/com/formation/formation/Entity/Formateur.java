@@ -1,7 +1,7 @@
-package com.formation.formation.domain;
+package com.formation.formation.Entity;
 
 
-import com.formation.formation.domain.base.BaseEntity;
+import com.formation.formation.Entity.base.BaseEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;

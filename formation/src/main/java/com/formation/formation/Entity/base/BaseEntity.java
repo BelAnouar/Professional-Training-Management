@@ -1,4 +1,4 @@
-package com.formation.formation.domain.base;
+package com.formation.formation.Entity.base;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

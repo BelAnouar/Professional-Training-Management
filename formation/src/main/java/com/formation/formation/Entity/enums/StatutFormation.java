@@ -1,4 +1,4 @@
-package com.formation.formation.domain.enums;
+package com.formation.formation.Entity.enums;
 
 public enum StatutFormation {
     PLANIFIEE, EN_COURS, TERMINEE, ANNULEE

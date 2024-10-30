@@ -1,7 +1,7 @@
-package com.formation.formation.domain;
+package com.formation.formation.Entity;
 
-import com.formation.formation.domain.base.BaseEntity;
-import com.formation.formation.domain.enums.StatutFormation;
+import com.formation.formation.Entity.base.BaseEntity;
+import com.formation.formation.Entity.enums.StatutFormation;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
