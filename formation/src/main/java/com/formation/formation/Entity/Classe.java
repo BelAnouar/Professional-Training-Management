@@ -2,12 +2,11 @@ package com.formation.formation.Entity;
 
 
 import com.formation.formation.Entity.base.BaseEntity;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
@@ -15,12 +14,15 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Entity
 public class Classe extends BaseEntity {
-    private String nom;
-    private int numSalle;
-    @OneToMany
+    @Column(name = "name")
+    private String name;
+    private Integer roomNumber;
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Apprenant> apprenant;
-    @OneToMany
-    private  List<Formateur> formateur;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Formateur> formateur;
+
 }

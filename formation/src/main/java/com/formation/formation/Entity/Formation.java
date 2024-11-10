@@ -3,10 +3,7 @@ package com.formation.formation.Entity;
 import com.formation.formation.Entity.base.BaseEntity;
 import com.formation.formation.Entity.enums.StatutFormation;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
@@ -14,18 +11,18 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Entity
 public class Formation extends BaseEntity {
     private String titre;
     private String niveau;
     private String prerequis;
-    private int capaciteMin;
-    private int capaciteMax;
+    private Integer capaciteMin;
+    private Integer capaciteMax;
     private String dateDebut;
     private String dateFin;
-    @ManyToOne
-    @JoinColumn(name = "formateur_id")
-    private Formateur formateur;
+    @OneToMany(mappedBy ="formation" )
+    private List<Formateur> formateur;
     @OneToMany(mappedBy ="formation" )
     private List<Apprenant> apprenants;
     private StatutFormation statut;

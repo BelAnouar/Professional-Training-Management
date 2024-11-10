@@ -2,14 +2,8 @@ package com.formation.formation.Entity;
 
 
 import com.formation.formation.Entity.base.BaseEntity;
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.List;
 
@@ -17,14 +11,17 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+
+@Builder
 @Entity
 public class Formateur extends BaseEntity {
-    private String nom;
+    private String name;
     private String prenom;
     private String email;
     private String specialite;
-    @OneToMany(mappedBy = "formateur" )
-    private List<Formation> formation;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "formation_id")
+    private Formation formation;
     @OneToOne
     @JoinColumn(name = "Classe_id")
     private Classe classe;
